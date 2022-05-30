@@ -1,5 +1,5 @@
-module "vm_adrianorighi" {
+module "vm_test" {
   source = "../../modules/compute-instance"
   subnetwork = "default"
-  name = "vm-test"
+  name = "vm-test-${terraform.workspace}"
 }
