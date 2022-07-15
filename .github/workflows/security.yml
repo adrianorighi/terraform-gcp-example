@@ -1,0 +1,15 @@
+name: tf-security
+on:
+  pull_request:
+jobs:
+  tfsec:
+    name: check tf security
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone repo
+        uses: actions/checkout@master
+      - name: tfsec
+        uses: aquasecurity/tfsec-pr-commenter-action@v1.2.0
+        with:
+          github_token: ${{ github.token }}
